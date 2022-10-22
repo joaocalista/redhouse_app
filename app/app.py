@@ -150,7 +150,7 @@ def set_profit(data):
 
 #mostra informacoes gerais
 def overall_info(raw_data,data):
-    st.title('# Principais Informações')
+    st.title('Principais Informações')
     c1, c2 = st.columns(2)
 
     with c1:
@@ -182,6 +182,8 @@ def reset_filters(buy_price_value, profit_value, sell_price_value):
 
 #mostra a tabelas e mapa contendo os imoveis recomendaddos para compra
 def show_data(data):
+
+    st.sidebar.download_button('Baixar Relatório', data.to_csv(index=False).encode('utf-8'), 'imoveis_recomendados.csv', mime='text/csv')
 
     st.sidebar.header('Filtrar Imóveis Recomendados')
 
