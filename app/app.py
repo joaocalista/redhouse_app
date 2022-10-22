@@ -183,8 +183,6 @@ def reset_filters(buy_price_value, profit_value, sell_price_value):
 #mostra a tabelas e mapa contendo os imoveis recomendaddos para compra
 def show_data(data):
 
-    st.sidebar.download_button('Baixar Relatório', data.to_csv(index=False).encode('utf-8'), 'imoveis_recomendados.csv', mime='text/csv')
-
     st.sidebar.header('Filtrar Imóveis Recomendados')
 
     f_neighbourhood = st.sidebar.multiselect('Regiões',
@@ -230,7 +228,7 @@ def show_data(data):
                     unsafe_allow_html=True)
 
         if not f_neighbourhood and not f_season:
-            st.dataframe(data[(data['buying_price'] <= f_buy_price) &
+            data_filter = data[(data['buying_price'] <= f_buy_price) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['profit'] >= f_profit[0]) &
                               (data['profit'] <= f_profit[1])][['id',
@@ -239,9 +237,11 @@ def show_data(data):
                                                                  'season_to_sell',
                                                                  'neighbourhood',
                                                                  'zipcode',
-                                                                 'location']], height=600)
+                                                                 'location']]
+            st.dataframe(data_filter, height=600)
+
         elif f_neighbourhood and not f_season:
-            st.dataframe(data[(data['neighbourhood'].isin(f_neighbourhood)) &
+            data_filter = data[(data['neighbourhood'].isin(f_neighbourhood)) &
                               (data['buying_price'] <= f_buy_price) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['profit'] >= f_profit[0]) &
@@ -252,10 +252,11 @@ def show_data(data):
                                                                  'season_to_sell',
                                                                  'neighbourhood',
                                                                  'zipcode',
-                                                                 'location' ]], height=600)
+                                                                 'location' ]]
+            st.dataframe(data_filter, height=600)
 
         elif f_neighbourhood and f_season:
-            st.dataframe(data[(data['neighbourhood'].isin(f_neighbourhood)) &
+            data_filter = data[(data['neighbourhood'].isin(f_neighbourhood)) &
                               (data['buying_price'] <= f_buy_price) &
                               (data['season_to_sell'].isin(f_season)) &
                               (data['sell_price'] <= f_sell_price) &
@@ -267,9 +268,12 @@ def show_data(data):
                                                                  'season_to_sell',
                                                                  'neighbourhood',
                                                                  'zipcode',
-                                                                 'location' ]], height=600)
+                                                                 'location' ]]
+
+            st.dataframe(data_filter, height=600)
+
         else:
-            st.dataframe(data[(data['buying_price'] <= f_buy_price) &
+            data_filter = data[(data['buying_price'] <= f_buy_price) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['season_to_sell'].isin(f_season)) &
                               (data['profit'] >= f_profit[0]) &
@@ -280,7 +284,11 @@ def show_data(data):
                                                                  'season_to_sell',
                                                                  'neighbourhood',
                                                                  'zipcode',
-                                                                 'location' ]], height=600)
+                                                                 'location' ]]
+            st.dataframe(data_filter, height=600)
+
+        st.sidebar.download_button('Baixar Relatório', data_filter.to_csv(index=False).encode('utf-8'),
+                                   'imoveis_recomendados.csv', mime='text/csv')
 
     with c2:
         st.markdown("<h1 style='text-align: center;'>Distribuição dos Imóveis</h1>", unsafe_allow_html=True)
