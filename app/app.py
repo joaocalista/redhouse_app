@@ -287,7 +287,7 @@ def show_data(data):
                                                                  'location' ]]
             st.dataframe(data_filter, height=600)
 
-        st.sidebar.download_button('Baixar Relatório', data_filter.to_csv(index=False).encode('utf-8'),
+        st.download_button('Baixar Relatório', data_filter.to_csv(index=False).encode('utf-8'),
                                    'imoveis_recomendados.csv', mime='text/csv')
 
     with c2:
