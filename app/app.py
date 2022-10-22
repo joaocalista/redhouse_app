@@ -224,6 +224,16 @@ def show_data(data):
     c1, c2 = st.columns(2)
 
     with c1:
+
+        cols = [ 'id',
+                 'buying_price',
+                 'sell_price',
+                 'profit',
+                 'season_to_sell',
+                 'neighbourhood',
+                 'zipcode',
+                 'location' ]
+
         st.markdown("<h1 style='text-align: center;'>Visão Geral dos Imóveis Recomendados</h1>",
                     unsafe_allow_html=True)
 
@@ -231,29 +241,18 @@ def show_data(data):
             data_filter = data[(data['buying_price'] <= f_buy_price) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['profit'] >= f_profit[0]) &
-                              (data['profit'] <= f_profit[1])][['id',
-                                                                 'buying_price',
-                                                                 'sell_price', 'profit',
-                                                                 'season_to_sell',
-                                                                 'neighbourhood',
-                                                                 'zipcode',
-                                                                 'location']]
-            st.dataframe(data_filter, height=600)
+                              (data['profit'] <= f_profit[1])]
+
+            st.dataframe(data_filter[cols], height=600)
 
         elif f_neighbourhood and not f_season:
             data_filter = data[(data['neighbourhood'].isin(f_neighbourhood)) &
                               (data['buying_price'] <= f_buy_price) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['profit'] >= f_profit[0]) &
-                              (data['profit'] <= f_profit[1])][[ 'id',
-                                                                 'buying_price',
-                                                                 'sell_price',
-                                                                 'profit',
-                                                                 'season_to_sell',
-                                                                 'neighbourhood',
-                                                                 'zipcode',
-                                                                 'location' ]]
-            st.dataframe(data_filter, height=600)
+                              (data['profit'] <= f_profit[1])]
+
+            st.dataframe(data_filter[cols], height=600)
 
         elif f_neighbourhood and f_season:
             data_filter = data[(data['neighbourhood'].isin(f_neighbourhood)) &
@@ -261,31 +260,18 @@ def show_data(data):
                               (data['season_to_sell'].isin(f_season)) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['profit'] >= f_profit[0]) &
-                              (data['profit'] <= f_profit[1])][[ 'id',
-                                                                 'buying_price',
-                                                                 'sell_price',
-                                                                 'profit',
-                                                                 'season_to_sell',
-                                                                 'neighbourhood',
-                                                                 'zipcode',
-                                                                 'location' ]]
+                              (data['profit'] <= f_profit[1])]
 
-            st.dataframe(data_filter, height=600)
+            st.dataframe(data_filter[cols], height=600)
 
         else:
             data_filter = data[(data['buying_price'] <= f_buy_price) &
                               (data['sell_price'] <= f_sell_price) &
                               (data['season_to_sell'].isin(f_season)) &
                               (data['profit'] >= f_profit[0]) &
-                              (data['profit'] <= f_profit[1])][[ 'id',
-                                                                 'buying_price',
-                                                                 'sell_price',
-                                                                 'profit',
-                                                                 'season_to_sell',
-                                                                 'neighbourhood',
-                                                                 'zipcode',
-                                                                 'location' ]]
-            st.dataframe(data_filter, height=600)
+                              (data['profit'] <= f_profit[1])]
+            
+            st.dataframe(data_filter[cols], height=600)
 
         st.download_button('Baixar Relatório', data_filter.to_csv(index=False).encode('utf-8'),
                                    'imoveis_recomendados.csv', mime='text/csv')
@@ -432,7 +418,7 @@ def show_graphs(data):
 if __name__ == '__main__':
 
     #configuracao da pagina
-    st.set_page_config(page_title='RedHouse', page_icon='🏠', layout="wide", initial_sidebar_state="auto")
+    st.set_page_config(page_title='RedHouse', page_icon='🏠', layout="wide", initial_sidebar_state="collapsed")
 
     st.markdown("<h1 style='text-align: center;'>RedHouse</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center;'>Bem-Vindo ao Relatório de Sugestão de Compra e Venda de Imóveis!</h3>", unsafe_allow_html=True)
