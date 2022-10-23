@@ -336,8 +336,7 @@ def profit_sqrft_map(data):
     st.markdown("<h1 style='text-align: center;'>Mapa de densidade da média do lucro por pé quadrado</h1>", unsafe_allow_html=True)
 
     # lendo geofile
-    geofile = geopandas.read_file(
-        'datasets/Zipcodes_for_King_County_and_Surrounding_Area_(Shorelines)___zipcode_shore_area.geojson')
+    geofile = geopandas.read_file('datasets/Zipcodes_for_King_County_and_Surrounding_Area_(Shorelines)___zipcode_shore_area.geojson')
 
     # Agrupando dados
     df = data[['profit/sqft', 'zipcode']].groupby('zipcode').mean().reset_index()
