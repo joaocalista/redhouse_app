@@ -270,7 +270,7 @@ def show_data(data):
                               (data['season_to_sell'].isin(f_season)) &
                               (data['profit'] >= f_profit[0]) &
                               (data['profit'] <= f_profit[1])]
-            
+
             st.dataframe(data_filter[cols], height=600)
 
         st.download_button('Baixar Relatório', data_filter.to_csv(index=False).encode('utf-8'),
