@@ -25,7 +25,8 @@ warnings.filterwarnings("ignore")
 #carrega os dados para a memoria
 @st.cache( allow_output_mutation=True )
 def read_data(path):
-    return pd.read_csv(path)
+    data = pd.read_csv(path)
+    return data
 
 
 #define as estações do ano
