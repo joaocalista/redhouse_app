@@ -17,11 +17,11 @@ O principais objetivos são:
 
     H2: Imóveis com data de construção menor que 1955, são 50% mais baratos, na média.
     
-    H3: No verão, o preço dos imóveis são, em média, 30% mais caro que no inverno.
+    H3: No verão, o preço dos imóveis são, em média, 10% mais caro que no inverno.
    
     H4: Os imóveis com condição nível 5 são, em média, pelo menos 10% mais caros.
    
-    H5: Imóveis que não foram reformados, são 40% mais baratos, na média.
+    H5: Imóveis que não foram reformados, são 30% mais baratos, na média.
    
     H6: Imóveis reformados após 2005 são 25% mais caras, em média.
    
