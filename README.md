@@ -36,7 +36,7 @@ Clique [**aqui**](https://nbviewer.org/github/joaocalista/redhouse_app/blob/main
 
 ## Questão de Negócio
 
-A RedHouse é uma empresa que atua no setor imobiliário, com sede no Condado de King, em Washington, USA, através da compra e venda de imóveis, auferindo lucro com a diferença entre os preços.
+A RedHouse é uma empresa que atua no setor imobiliário, com sede no Condado de King, em Washington, USA. A empresa atua no mercado através da compra e venda de imóveis, auferindo lucro com a diferença entre os preços.
 Por conta do grande volume de informações que o time de negócios recebe diariamente, a empresa não consegue tomar boas decisões de compra e venda.
 O CEO da empresa, observando que o lucro almejado não estava sendo alcançado, contratou nossa consultoria afim de resolvermos as seguintes questões de negócio:
 
