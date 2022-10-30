@@ -98,3 +98,7 @@ Fornecer um relatório e dashboard contendo uma lista de recomendação de imóv
 a serem adquiridos.
 Caso a recomendação seja seguida, o lucro bruto obtido pela empresa pode chegar ao
 valor de  $ 314,641,855.40
+
+## Referências
+[Dataset do Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)
+
