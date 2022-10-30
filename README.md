@@ -3,7 +3,7 @@
 
 ## Objetivos
 
-Nesse projeto nós iremos realizar uma análise minuciosa do banco de dados de uma empresa do ramo imobiliário, com o intuito de maximizar o lucro da companhia.
+Nesse projeto será realizada uma análise minuciosa do banco de dados de uma empresa do ramo imobiliário, com o intuito de maximizar o lucro da companhia.
 
 O principais objetivos são:
 
