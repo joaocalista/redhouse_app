@@ -29,6 +29,11 @@ O principais objetivos são:
 
 - Elaborar um dashboard, que poderá ser acessado pelo CEO, contendo um resumo dos resultados.
 
+### Links para o Dashboard e Notebook
+Clique [**aqui**](https://joaocalista-redhouse-app-appapp-ozlr1v.streamlitapp.com/) para acessar o dashboard
+
+Clique [**aqui**](https://nbviewer.org/github/joaocalista/redhouse_app/blob/main/EDA.ipynb) para acessar o notebook do projeto
+
 ## Questão de Negócio
 
 A RedHouse é uma empresa que atua no setor imobiliário, com sede no Condado de King, em Washington, USA, através da compra e venda de imóveis, auferindo lucro com a diferença entre os preços.
