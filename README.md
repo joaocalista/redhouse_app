@@ -60,7 +60,7 @@ Lucro Esperado: $ 314,641,855.40
  
 - Propriedades com valores de atributos discrepantes serão desconsiderados, assumindo que foram erros de digitação. (exemplo: imóvel com 33 quartos).
 - Os critérios para a compra de um imóvel é que o seu preço esteja abaixo da mediana da região, a condição de uso seja maior ou igual a 3 e a nota da casa (grade) 
-    seja maior ou igual a 10.
+    seja maior ou igual a 8.
 - Será considerado que não houve reforma o imóvel com ano de reforma igual a 0.
 - Caso haja imóveis duplicados, será considerado na análise o mais recente.
 - As casas com área do porão igual a 0 não tem porão.
